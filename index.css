@@ -78,13 +78,37 @@ button {
 }
 
 .buttonD {
+    background: none;
+    color: black;
+    border: 3px solid black;
+    transition: all 0.3s;
+}
+.buttonD:hover {
+    color: white;
+}
+.buttonD:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    background-color: black;
+    transition: all 0.3s;
+}
+.buttonD:hover:before {
+    width: 100%;
+}
+
+.buttonE {
     background-color: #f14444;
     border: none;
     transform: translateX(0);
     overflow: hidden;
     color: white;
 }
-.buttonD:before {
+.buttonE:before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -99,7 +123,7 @@ button {
     transition: all .5s;
     right: 0;
 }
-.buttonD:hover:before {
+.buttonE:hover:before {
     transform: rotate(30deg) scaleX(1) translateY(-114px);
     height: 281%;
     width: 250%;
