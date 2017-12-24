@@ -3,6 +3,9 @@ a {
     color: black;
     font-size: 24px;
     position: relative;
+    display: inline-block;
+    padding: 10px 8px;
+    margin: 10px;
 }
 
 .linkA:before {
@@ -30,4 +33,29 @@ a {
 }
 .linkB:hover:before {
     width: 100%;
+}
+
+.linkC:before {
+    content: '<';
+    position: absolute;
+    right: 80%;
+    font-weight: 900;
+    transition: all 0.3s;
+    opacity: 0;
+}
+.linkC:hover:before {
+    right: 100%;
+    opacity: 1;
+}
+.linkC:after {
+    content: '>';
+    position: absolute;
+    left: 80%;
+    font-weight: 900;
+    transition: all 0.3s;
+    opacity: 0;
+}
+.linkC:hover:after {
+    left: 100%;
+    opacity: 1;
 }
