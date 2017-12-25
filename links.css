@@ -36,6 +36,33 @@ a {
 }
 
 .linkC:before {
+    content: '';
+    height: 0;
+    width: 5px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    transition: all 0.3s;
+    background-color: red;
+}
+.linkC:after {
+    content: '';
+    height: 0;
+    width: 5px;
+    position: absolute;
+    top: 0;
+    right:0;
+    transition: all 0.3s;
+    background-color: red;
+}
+.linkC:hover:before {
+    height: 100%;
+}
+.linkC:hover:after {
+    height: 100%;
+}
+
+.linkD:before {
     content: '<';
     position: absolute;
     right: 80%;
@@ -43,11 +70,11 @@ a {
     transition: all 0.3s;
     opacity: 0;
 }
-.linkC:hover:before {
+.linkD:hover:before {
     right: 100%;
     opacity: 1;
 }
-.linkC:after {
+.linkD:after {
     content: '>';
     position: absolute;
     left: 80%;
@@ -55,7 +82,7 @@ a {
     transition: all 0.3s;
     opacity: 0;
 }
-.linkC:hover:after {
+.linkD:hover::after {
     left: 100%;
     opacity: 1;
 }
