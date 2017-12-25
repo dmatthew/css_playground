@@ -1,11 +1,45 @@
+body {
+    margin: 0;
+    font-family: monospace;
+}
+
+header {
+    padding: 24px;
+    text-align: center;
+    background-color: #FAFAFA;
+}
+h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 3em;
+}
+
+section {
+    padding: 8em 4em;
+    text-align: center;
+}
+
+#section1 {
+    background-color: #B2EBF2;
+}
+#section2 {
+    background-color: #FF8A65;
+}
+#section3 {
+    background-color: #DCE775;
+}
+#section4 {
+    background-color: #E1BEE7;
+}
+
 a {
     text-decoration: none;
-    color: black;
-    font-size: 24px;
+    color: #212121;
+    font-size: 1.5em;
     position: relative;
     display: inline-block;
     padding: 10px 8px;
-    margin: 10px;
+    margin: 12px;
 }
 
 .linkA:before {
@@ -15,12 +49,15 @@ a {
     position: absolute;
     bottom: 0;
     transition: all 0.3s;
-    background-color: red;
+    background-color: #212121;
 }
 .linkA:hover:before {
     width: 100%;
 }
 
+.linkB {
+    color: white;
+}
 .linkB:before {
     content: '';
     width: 0;
@@ -29,7 +66,7 @@ a {
     bottom: 0;
     right:0;
     transition: all 0.3s;
-    background-color: red;
+    background-color: white;
 }
 .linkB:hover:before {
     width: 100%;
@@ -43,7 +80,7 @@ a {
     bottom: 0;
     left:0;
     transition: all 0.3s;
-    background-color: red;
+    background-color: #212121;
 }
 .linkC:after {
     content: '';
@@ -53,7 +90,7 @@ a {
     top: 0;
     right:0;
     transition: all 0.3s;
-    background-color: red;
+    background-color: #212121;
 }
 .linkC:hover:before {
     height: 100%;
