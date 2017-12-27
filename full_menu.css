@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+}
+
+header {
+    padding: 24px;
+    text-align: center;
+}
+h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 3em;
+}
