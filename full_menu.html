@@ -6,5 +6,37 @@
 <body>
   <header>
     <h1>Full Page Menus</h1>
+    <div id="menu-icon1" class="menu-icon" data-menu="menu1">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
+  <div id="menu1" class="menu">
+    <ul>
+      <li><a href="#">Item #1</a></li>
+      <li><a href="#">Item #2</a></li>
+      <li><a href="#">Item #3</a></li>
+      <li><a href="#">Item #4</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <p>Sed dictum volutpat risus at aliquet. Mauris eleifend congue risus, pulvinar sodales mi porta at. Cras vulputate sit amet nisl sit amet lacinia. Proin at urna lorem. Mauris suscipit lacus dui, eu hendrerit risus scelerisque sit amet. Cras sem tellus, dapibus at lorem non, blandit imperdiet ligula. Nam suscipit maximus lorem, ut mollis metus facilisis id. Curabitur condimentum lorem ut nulla eleifend sagittis.</p>
+    <p>Vivamus ac commodo nisi, nec tincidunt orci. Morbi commodo metus eu massa sagittis, id sagittis massa vulputate. Vestibulum pulvinar quam et dolor consectetur iaculis. Donec dictum dolor in tellus efficitur luctus. Maecenas convallis elit ac felis posuere, quis rutrum turpis dignissim. Sed id quam quis lacus auctor maximus. Phasellus euismod risus enim, vitae aliquet erat euismod quis. Duis at massa commodo, cursus mi ut, luctus arcu. Suspendisse nec dui ut massa rutrum dictum. Morbi sit amet luctus ligula. Aenean facilisis pulvinar fringilla. In sollicitudin sed lorem nec consectetur.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus tellus, condimentum non nisi a, semper commodo leo. Aenean sagittis ultricies magna. Sed lorem urna, ullamcorper quis dignissim sed, lacinia vel tortor. Proin dignissim nunc eget mauris vehicula, vitae gravida eros convallis. Curabitur nec nunc vitae lacus auctor fermentum. Etiam vitae ultrices urna. Etiam consectetur dapibus auctor. Integer interdum et mauris ut aliquet. Phasellus aliquam ante sapien, sed efficitur magna tristique eget. Morbi in elit vitae magna egestas feugiat at sed tortor. Pellentesque ante est, iaculis vitae sagittis nec, eleifend nec lectus. Sed elementum maximus sodales. Pellentesque luctus nibh ut odio scelerisque sollicitudin. Fusce nec nulla arcu. Suspendisse sed odio libero.</p>
+  </div>
+  <script>
+    var menus = document.getElementsByClassName('menu-icon');
+    Array.prototype.map.call(menus, function (element, index) {
+        element.addEventListener('click', function (event) {
+          this.classList.toggle('open');
+          document.body.classList.toggle('modal-open');
+          var menu = document.getElementById(this.getAttribute('data-menu'));
+          if (menu) {
+              menu.classList.toggle('open');
+          }
+      });
+    });
+  </script>
 </body>
