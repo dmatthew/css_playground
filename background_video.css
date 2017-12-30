@@ -4,6 +4,49 @@
 body {
     margin: 0;
 }
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    height: 80px
+}
+header .header-content {
+    padding: 40px;
+}
+header .title {
+    color: #D32F2F;
+    font-size: 24px;
+    font-weight: bold;
+}
+header .title:hover {
+    text-decoration: underline;
+}
+
+.scroll {
+    color: #D32F2F;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    border: 1px dashed #D32F2F;
+    transform: translateX(-50%);
+    background: none;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 72px;
+}
+
+.main {
+    padding: 80px;
+}
+.main h1 {
+    margin: 0;
+}
+
 .video-wrapper {
   background: #000;
   height: 100vh;

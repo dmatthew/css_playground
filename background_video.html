@@ -2,12 +2,58 @@
 <html>
   <title>CSS Playground</title>
   <link rel="stylesheet" type="text/css" href="background_video.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </html>
 <body>
+  <header>
+    <div class="header-content">
+      <a class="title" href="https://github.com/dmatthew/">dmatthew</a>
+    </div>
+  </header>
   <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/FyR02rLcylU?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=FyR02rLcylU" frameborder="0" allowfullscreen></iframe>
+    <!-- <iframe id="ytplayer2" src="https://www.youtube.com/embed/FyR02rLcylU?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=FyR02rLcylU&enablejsapi=1" frameborder="0" allowfullscreen></iframe> -->
+    <div id='ytplayer'></div>
+    <button id="scroll" class="scroll">&#8675;</button>
   </div>
-  <div class="main">
+  <div id="main" class="main">
     <h1>Full Page Video Background</h1>
+    <p>This page demonstrates a full screen video as a background. The video is a YouTube video displayed in an iframe.</p>
   </div>
+
+  <script>
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('ytplayer', {
+        videoId: 'FyR02rLcylU',
+        playerVars: {
+            'autoplay': 1,
+            'controls': 0,
+            'loop': 1,
+            'showinfo': 0,
+            'playlist': 'FyR02rLcylU'
+        },
+        events: {
+          onReady: onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      player.mute();
+      player.playVideo();
+    }
+    document.getElementById('scroll').addEventListener('click', function (event) {
+      event.preventDefault();
+      var target = document.getElementById('main');
+      var scrollPos = target.offsetTop;
+      $("html, body").animate({ scrollTop: scrollPos }, 800);
+    });
+  </script>
 </body>
