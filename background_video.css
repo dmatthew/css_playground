@@ -90,3 +90,9 @@ header .title:hover {
       left: -108%;
   }
 }
+
+@media screen and (max-width: 480px) {
+    .video-section .heading {
+        font-size: 48px;
+    }
+}
