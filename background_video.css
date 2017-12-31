@@ -10,7 +10,8 @@ a {
 
 header {
     position: fixed;
-    height: 80px
+    height: 80px;
+    z-index: 1;
 }
 header .header-content {
     padding: 40px;
@@ -47,25 +48,45 @@ header .title:hover {
     margin: 0;
 }
 
+.video-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-section .heading {
+    text-align: center;
+    font-size: 60px;
+    color: #D32F2F;
+    line-height: 80px;
+    flex: 1;
+}
 .video-wrapper {
-  background: #000;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -99;
+    background: #000;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    z-index: -99;
 }
 .video-wrapper iframe {
-    height: 100vh;
-  pointer-events: none;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    opacity: .7;
 }
 @media (min-aspect-ratio: 16/9) {
-  .video-wrapper iframe {
+  .video-wrapper {
       height: 300%;
-      margin-top: -100%;
+      top: -100%;
   }
 }
 @media (max-aspect-ratio: 16/9) {
-  .video-wrapper iframe {
-      width: 300%;
-      margin-left: -100%;
+  .video-wrapper {
+      width: 316%;
+      left: -108%;
   }
 }

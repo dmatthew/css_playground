@@ -10,13 +10,16 @@
       <a class="title" href="https://github.com/dmatthew/">dmatthew</a>
     </div>
   </header>
-  <div class="video-wrapper">
-    <div id='ytplayer'></div>
+  <div class="video-section">
+    <h1 class="heading">Full Page Video Background</h1>
     <button id="scroll" class="scroll">&#8675;</button>
+    <div class="video-wrapper">
+      <div id='ytplayer'></div>
+    </div>
   </div>
   <div id="main" class="main">
     <h1>Full Page Video Background</h1>
-    <p>This page demonstrates a full screen video as a background. The video is a YouTube video displayed in an iframe.</p>
+    <p>This page demonstrates a full screen video as a background. The video here is a YouTube video displayed in an iframe. Using a YouTube Iframe embed is really not the best way to do this. Its much easier if you just use the actual video source with an HTML5 &lt;video&gt; tag instead of dealing with iframes and YouTube's API, which makes correctly sizing the video impossible.</p>
   </div>
 
   <script>
@@ -36,7 +39,8 @@
             'controls': 0,
             'loop': 1,
             'showinfo': 0,
-            'playlist': 'FyR02rLcylU'
+            'playlist': 'FyR02rLcylU',
+            'rel': 0
         },
         events: {
           onReady: onPlayerReady
@@ -48,6 +52,7 @@
       player.mute();
       player.playVideo();
     }
+
     document.getElementById('scroll').addEventListener('click', function (event) {
       event.preventDefault();
       var target = document.getElementById('main');
