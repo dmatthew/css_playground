@@ -24,6 +24,9 @@ header .title {
 header .title:hover {
     text-decoration: underline;
 }
+button:focus {
+    outline: none;
+}
 
 .scroll {
     color: #D32F2F;
